@@ -60,3 +60,7 @@ ChromeDB.prototype.get = function (a, b) {
 ChromeDB.prototype.clear = function () {
   this.storage.clear();
 };
+
+if (typeof module === 'object') {
+  module.exports = ChromeDB;
+}
