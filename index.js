@@ -6,9 +6,8 @@ function set(obj, path, b) {
   while (path.length - 1) {
     if (!temp[path[0]]) {
       temp[path[0]] = {};
-    } else {
-      temp = temp[path[0]];
     }
+    temp = temp[path[0]];
     path.shift();
   }
 
@@ -24,9 +23,8 @@ function get(obj, path) {
   while (path.length - 1) {
     if (!temp[path[0]]) {
       temp[path[0]] = {};
-    } else {
-      temp = temp[path[0]];
     }
+    temp = temp[path[0]];
     path.shift();
   }
 
