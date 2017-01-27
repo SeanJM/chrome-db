@@ -7,5 +7,18 @@
   "scripts": {
     "test": "test/index.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^3.14.1"
+  },
+  "description": "### A script to interface with the chrome extension database using Promises.",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeanJM/chrome-db.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/SeanJM/chrome-db/issues"
+  },
+  "homepage": "https://github.com/SeanJM/chrome-db#readme"
 }

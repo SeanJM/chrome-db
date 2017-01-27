@@ -4,17 +4,6 @@
 
 ### `.get`
 
-#### Callback
-
-```javascript
-const db = new ChromeDB();
-db.get(['object', 'path'], result => {
-  // Process results
-});
-```
-
-#### Promise
-
 ```javascript
 const db = new ChromeDB();
 db
@@ -24,7 +13,7 @@ db
   });
 ```
 
-#### Setting it using an object path
+#### Getting it using an object path
 
 ```javascript
 const db = new ChromeDB();
@@ -36,17 +25,6 @@ db
 ```
 
 ### `.set`
-
-#### Callback
-
-```javascript
-const db = new ChromeDB();
-db.set({ object : { path : 'test' } }, result => {
-  // Do stuff
-});
-```
-
-#### Promise
 
 ```javascript
 const db = new ChromeDB();
