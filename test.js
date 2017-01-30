@@ -44,6 +44,74 @@ module.exports = tinyTest(function (test, load) {
       };
     });
 
+  test('set multiple objects with get(null)')
+    .this(function () {
+      const db = new ChromeDB();
+      db.set('test.id', 'abc');
+      db.set('test.href', 'def');
+      db.get('test.href');
+      return db.get(null);
+    })
+    .isDeepEqual(function () {
+      return {
+        test : {
+          id : 'abc',
+          href : 'def'
+        }
+      };
+    });
+
+  test('set with object (error)')
+    .isFailure(function () {
+      const db = new ChromeDB();
+      db.set({ test : 'value' });
+    });
+
+  test('on')
+    .this(function () {
+      const db = new ChromeDB();
+
+      let on = false;
+
+      db.on('test', function (e) {
+        on = e;
+      });
+
+      return db.set('test', true).then(() => on);
+    })
+    .isEqual(() => true);
+
+  test('off')
+    .this(function () {
+      const db = new ChromeDB();
+
+      let on = false;
+
+      db.on('test', function (e) {
+        on = e;
+      });
+
+      db.off('test');
+      return db.set('test', true).then(() => on);
+    })
+    .isEqual(() => false);
+
+  test('off (callback)')
+    .this(function () {
+      const db = new ChromeDB();
+
+      let on = false;
+
+      function ref(e) {
+        on = e;
+      }
+
+      db.on('test', ref);
+      db.off('test', ref);
+      return db.set('test', true).then(() => on);
+    })
+    .isEqual(() => false);
+
   load();
 }).then(function () {
   fs.unlink('./.temp.js');

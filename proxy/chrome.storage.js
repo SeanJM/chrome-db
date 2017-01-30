@@ -18,7 +18,7 @@ chromeStorage.set = function (value, callback) {
 chromeStorage.get = function (path, callback) {
   setTimeout(() => {
     if (path) {
-      callback(_.get(chromeStorage.value, path));
+      callback(get(chromeStorage.value, path));
     } else {
       callback(chromeStorage.value);
     }

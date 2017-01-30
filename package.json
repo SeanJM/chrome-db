@@ -7,9 +7,7 @@
   "scripts": {
     "test": "test/index.js"
   },
-  "dependencies": {
-    "eslint": "^3.14.1"
-  },
+  "dependencies": {},
   "description": "### A script to interface with the chrome extension database using Promises.",
   "devDependencies": {},
   "repository": {
